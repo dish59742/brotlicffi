@@ -148,7 +148,7 @@ jobs:
             ${{ env.img }} \
             bash -exc '\
             source .env/bin/activate && \
-            pip install tox && \
+            ${{ env.py }} -m pip install tox && \
             /opt/python/${{ matrix.pyver }}/bin/tox -e py && \
             tox --skip-missing-interpreters && \
             deactivate'

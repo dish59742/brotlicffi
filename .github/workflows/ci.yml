@@ -169,9 +169,9 @@ jobs:
       uses: docker/setup-qemu-action@v1
     
     - uses: actions/setup-python@v2
-        name: Install Python
-        with:
-          python-version: '3.7'
+      name: Install Python
+      with:
+        python-version: '3.7'
 
     - name: Install cibuildwheel
       run: python -m pip install cibuildwheel
@@ -180,7 +180,7 @@ jobs:
       run: python -m cibuildwheel --output-dir wheelhouse
       env:
         CIBW_ARCHS_LINUX: aarch64
-        CIBW_BUILD: CIBW_BUILD: "cp36-* cp37-* cp38-* cp39-*"
+        CIBW_BUILD: "cp36-* cp37-* cp38-* cp39-*"
       
     - uses: actions/upload-artifact@v2
       with:

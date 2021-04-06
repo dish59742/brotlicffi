@@ -179,6 +179,8 @@ jobs:
       env:
         CIBW_ARCHS_LINUX: aarch64
         CIBW_BUILD: "cp36-* cp37-* cp38-* cp39-*"
+        CIBW_TEST_REQUIRES: tox
+        CIBW_TEST_COMMAND: tox -e py
       
     - uses: actions/upload-artifact@v2
       with:
